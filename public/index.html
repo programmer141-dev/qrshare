@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- <script src="../static/app.js" defer></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mid">
+            <div class="form" id="form" style="visibility: hidden">
+                <div class="wrapper" >
+                    <lable class="lab">message</lable>
+                    <input type="text" class="inp" id="link" name="link">
+                    <button class="btn" id="btn">send</button>
+                </div>
+            </div>
+            <div id="reader"></div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js"
+        integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var socket = io();
+        const scanner = new Html5QrcodeScanner('reader', {
+            qrbox: {
+                width:200,
+                height:200
+            },
+            fps: 30
+        });
+        scanner.render((msg) => {
+            socket.emit("joinroom", msg);
+            document.getElementById("form").style.visibility = "visible"
+            scanner.clear();
+        }, (err) => {
+        })
+        document.getElementById('btn').onclick = (e) => {
+            let link = document.getElementById('link').value;
+            socket.emit("msg", link);
+        }
+    </script>
+</body>
+</html>

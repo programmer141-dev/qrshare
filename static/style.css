@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: "Inter";
+    justify-content: center;
+}
+
+#value{
+    width: 60%;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 2px solid rgb(234, 234, 234);
+    border-radius: 10px;
+}
+
+.container .mid{
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+.container .mid .list{
+    width: 100%;
+    height:max-content;
+    display: flex;
+    cursor: pointer;
+}
+
+.container .mid .list .link.focus{
+    color: rgb(138, 12, 255);
+    margin-left: 15px;
+}
+
+.container .mid .list .link{
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 10px;
+    color: rgb(168, 168, 168);
+}
+
+.container .mid .title{
+    font-size: 25px;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.container .mid .form{
+    width: 100%;
+    height: max-content;
+    padding-top: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.container .mid .form .wrapper{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.container .mid .form .wrapper .lab{
+    font-size: 12px;
+    margin-bottom: 9px;
+}
+
+.container .mid .form .wrapper .inputs{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .mid .form .wrapper .inputs .inp{
+    width: 48.5%;
+}
+
+.container .mid .form .wrapper .inp {
+    padding: 0 10px;
+    width: 100%;
+    height: 38px;
+    border: 2px solid rgba(128, 128, 128, 0.529);
+    font-family: "Inter";
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+
+.btn{
+    width: max-content;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background: rgb(33, 33, 33);
+    font-family: "Inter";
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 20px;
+}
+
+.qr {
+    width: 280px;
+    height: 280px;
+    user-select: none;
+}
+
+
+.subs{
+    font-size: 10px;
+    color: rgb(105, 105, 105);
+    margin-left: 10px;
+}
+
+.mt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .container .mid{
+        width: 100%;
+    }
+}
