@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 
-const PORT = env.process.PORT || 4000
+const PORT = process.env.PORT || 4000
 const parser = bodyparser();
 
 app.engine('html', require('ejs').renderFile);
